@@ -1,0 +1,506 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fffaf5;
+    color: #333;
+    line-height: 1.6;
+  }
+  .container{
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    /* box-shadow: ; */
+  }
+  
+  .one img{
+    width: 400px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px #00fffb,0 0 40px #008fbc;
+    margin-right: 50px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #080808;
+    box-shadow: 0 2px 5px rgba(126, 125, 125, 0.1);
+    position: relative;
+    z-index: 100;
+    width: 100% fit-content;
+
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #faf7f7;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #ff6f61;
+  }
+  
+  /* Hamburger menu styles */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fdfbfb;
+    /* position: absolute;
+    top: 60px; 
+    right: 0; */
+    width: 100%;
+    padding: 10px;
+    /* z-index: 1000; */
+    border-radius: 5px ;
+    margin-top: 4px;
+  }
+  
+   .nav-links.active {
+    display: flex;
+  }
+  .nav-links a{
+    color: black;
+    /* text-decoration: none; */
+  }
+  /* Hamburger styling */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s;
+  }
+  
+  /* Optional: Add animation to hamburger when open */
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Optional: show nav links always on desktop */
+  @media (min-width: 768px) {
+    .hamburger {
+      display: none;
+    }
+
+
+  
+    .nav-links {
+      display: flex !important;
+      flex-direction: row;
+      position: static;
+      background: none;
+      width: auto;
+      padding: 0;
+      /* background-color: white; */
+    }
+  
+    .nav-links li a{
+      margin-left: 20px;
+      /* color: rgb(15, 15, 15);   */
+    }
+  }
+  @media (max-width:767px){
+    .nav-links li a{
+      color: black;
+    }
+    .container .one{
+      margin-top: 100px;
+      margin-left: 44px;
+    }
+  }
+  @media (max-width:500px){
+    .container{
+      position: relative;
+      top: 50px;
+    }
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 80vh;
+    /* background: url('../images/hero-bg.jpg') center/cover no-repeat; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    color: #fff;
+    /* margin-left: 40px;  */
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #fa2916;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #e65b4d;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+  @media (max-width:500px){
+    .container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        /* flex-direction: column; */
+        
+    }
+  }
+.menu-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #1f1e1e;
+    box-shadow: 0px 5px 10px black;
+  }
+
+  .menu-container h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 5px;
+    text-shadow: 0px 0px 20px #8c8f8f,0 0 40px #a0a1a1;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 20px;
+    color: #e65b4d;
+    margin-bottom: 30px;
+  }
+
+  .section {
+    margin-bottom: 40px;
+  }
+
+  .section h2 {
+    background-color: #ff7f00;
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 22px;
+    color: black;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  .hamburger{
+    color: white;
+  }
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    color: white;
+  }
+
+  .images-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 30px 0;
+  }
+ 
+  .images-row img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+
+  }
+
+  
+.about {
+  background-color: #1f1e1e; /* White background for the about section */
+  padding: 20px;
+  /* border-radius: 5px; */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px; /* Space below the about section */
+}
+
+.about h2 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 15px;
+  
+}
+
+.about h3 {
+  font-size: 22px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 16px;
+  color: #e65b4d;
+  line-height: 1.6; /* Improved line spacing for readability */
+  margin-bottom: 15px;
+}
+
+.about ul {
+  list-style-type: disc; /* Bullet points for the list */
+  padding-left: 20px; /* Indentation for the list */
+  margin-bottom: 15px;
+}
+
+.about ul li {
+  font-size: 16px;
+  color: #e65b4d;
+  margin-bottom: 5px; /* Space between list items */
+}
+
+footer {
+  background-color: #333; /* Dark background for the footer */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  padding: 15px 0; /* Padding for the footer */
+  position: relative; /* Positioning context for footer */
+  bottom: 0; /* Stick to the bottom */
+  width: 100%; /* Full width */
+}
+
+footer p {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Font size for footer text */
+}
+#reservationForm {
+  background-color: #1f1e1e; /* White background for the form */
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 50px;
+  box-shadow: 0 5px 15px rgba(22, 21, 21, 0.829);
+  max-width: 500px; /* Maximum width for the form */
+  margin:   auto; /* Center the form on the page */
+}
+
+#reservationForm label {
+  display: block; /* Make labels block elements */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Bold text for labels */
+  color: white;
+  padding-left: 25px; /* Dark color for labels */
+}
+
+#reservationForm input {
+  width: 100%; /* Full width for inputs */
+  padding: 10px; /* Padding inside inputs */
+  margin-bottom: 15px; /* Space between inputs */
+  border: 1px solid #ccc; /* Light border for inputs */
+  border-radius: 4px; /* Rounded corners for inputs */
+  font-size: 16px;
+  max-width: 400px; 
+  margin-left: 25px;/* Font size for inputs */
+}
+
+#reservationForm input:focus {
+  border-color: #e74c3c; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+#reservationForm button {
+  background-color: #e74c3c; /* Button background color */
+  color: #fff; /* White text color */
+  padding: 10px 15px; /* Padding for button */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners for button */
+  font-size: 16px; /* Font size for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s;
+  margin-left: 25px; /* Smooth transition for hover effect */
+}
+
+#reservationForm button:hover {
+  background-color: #c0392b; /* Darker shade on hover */
+}
+
+footer {
+  background-color: #333; /* Dark background for the footer */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  padding: 15px 0; /* Padding for the footer */
+  position: relative; /* Positioning context for footer */
+  bottom: 0; /* Stick to the bottom */
+  width: 100%; /* Full width */
+}
+
+footer p {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Font size for footer text */
+}
+#contact {
+  background-color: #1f1e1e; /* White background for the contact section */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 15px 2px rgba(0, 0, 0, 0.76);
+  max-width: 600px; /* Maximum width for the contact section */
+  margin: 0 auto; /* Center the contact section on the page */
+  /* color: white; */
+}
+
+#contact h2 {
+  font-size: 28px;
+  color:white;
+  margin-bottom: 15px;
+  text-align: center; /* Center the main heading */
+}
+
+#contact h3 {
+  font-size: 22px;
+  color:  white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#contact p {
+  font-size: 16px;
+  color: white;
+  line-height: 1.6; /* Improved line spacing for readability */
+  margin-bottom: 15px;
+  text-align: center; /* Center text for address and contact info */
+}
+
+#contact a {
+  color: #e74c3c; /* Color for links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+#contact a:hover {
+  text-decoration: underline; /* Underline on hover for links */
+}
+
+#contact ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  text-align: center; /* Center the list */
+}
+
+#contact ul li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+#contact form {
+  margin-top: 20px; /* Space above the form */
+}
+
+#contact label {
+  display: block; /* Make labels block elements */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Bold text for labels */
+  color: white; /* Dark color for labels */
+}
+
+#contact input, #contact textarea {
+  width: 100%; /* Full width for inputs and textarea */
+  padding: 10px; /* Padding inside inputs */
+  margin-bottom: 15px; /* Space between inputs */
+  border: 1px solid #ccc; /* Light border for inputs */
+  border-radius: 4px; /* Rounded corners for inputs */
+  font-size: 16px; /* Font size for inputs */
+}
+
+#contact input:focus, #contact textarea:focus {
+  border-color: #e74c3c; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+#contact button {
+  background-color: #e74c3c; /* Button background color */
+  color: #fff; /* White text color */
+  padding: 10px 15px; /* Padding for button */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners for button */
+  font-size: 16px; /* Font size for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  display: block; /* Center button */
+  margin: 0 auto; /* Center button */
+}
+
+#contact button:hover {
+  background-color: #c0392b; /* Darker shade on hover */
+}
