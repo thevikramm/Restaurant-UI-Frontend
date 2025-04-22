@@ -16,21 +16,20 @@ async function handleReservation(event) {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/reserve', {
+        const response = await fetch('http://127.0.0.1:5000/reserve', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, date, time, guests })
         });
 
         const data = await response.json();
-        alert(data.reservationMessage);
+        alert(data.message);  // ✅ fixed key name
         document.getElementById('reservationForm').reset();
     } catch (error) {
         alert('Error submitting reservation.');
         console.error(error);
     }
 }
-
 
 // Function to handle contact form submission
 async function handleContact(event) {
@@ -46,21 +45,20 @@ async function handleContact(event) {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/contact', {
+        const response = await fetch('http://127.0.0.1:5000/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ contactName, contactEmail, message })
         });
 
         const data = await response.json();
-        alert(data.reservationMessage);
+        alert(data.message);  // ✅ fixed key name
         document.getElementById('contactForm').reset();
     } catch (error) {
         alert('Error submitting contact form.');
         console.error(error);
     }
 }
-
 
 // Attach the event listeners to the forms
 document.addEventListener('DOMContentLoaded', () => {
@@ -73,13 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', handleContact);
     }
-});
-document.addEventListener('DOMContentLoaded', function () {
+
+    // Hamburger toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', function () {
-      navLinks.classList.toggle('active'); // Toggle class for showing menu
-      hamburger.classList.toggle('open'); // Optional: toggle animation for hamburger
-    });
-  });
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('open');
+        });
+    }
+});
