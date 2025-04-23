@@ -1,6 +1,4 @@
-// script.js
-
-// Function to handle reservation form submission
+// Handle reservation form
 async function handleReservation(event) {
     event.preventDefault();
 
@@ -23,15 +21,15 @@ async function handleReservation(event) {
         });
 
         const data = await response.json();
-        alert(data.message);  // ✅ fixed key name
+        alert(data.message);
         document.getElementById('reservationForm').reset();
     } catch (error) {
         alert('Error submitting reservation.');
-        console.error(error);
+        console.error('🧨 Frontend Error:', error);
     }
 }
 
-// Function to handle contact form submission
+// Handle contact form
 async function handleContact(event) {
     event.preventDefault();
 
@@ -52,15 +50,15 @@ async function handleContact(event) {
         });
 
         const data = await response.json();
-        alert(data.message);  // ✅ fixed key name
+        alert(data.message);
         document.getElementById('contactForm').reset();
     } catch (error) {
         alert('Error submitting contact form.');
-        console.error(error);
+        console.error('🧨 Frontend Error:', error);
     }
 }
 
-// Attach the event listeners to the forms
+// Attach listeners
 document.addEventListener('DOMContentLoaded', () => {
     const reservationForm = document.getElementById('reservationForm');
     if (reservationForm) {
@@ -72,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', handleContact);
     }
 
-    // Hamburger toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.getElementById('nav-links');
     if (hamburger && navLinks) {
