@@ -36,9 +36,9 @@ async function handleContact(event) {
 
     const contactName = document.getElementById('contactName').value.trim();
     const contactEmail = document.getElementById('contactEmail').value.trim();
-    const message = document.getElementById('message').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
 
-    if (!contactName || !contactEmail || !message) {
+    if (!contactName || !contactEmail || !contactMessage) {
         alert('Please fill in all contact fields.');
         return;
     }
@@ -47,7 +47,7 @@ async function handleContact(event) {
         const response = await fetch('http://localhost:5000/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ contactName, contactEmail, message })
+            body: JSON.stringify({ contactName, contactEmail, contactMessage })
         });
 
         const data = await response.json();
