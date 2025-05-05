@@ -146,10 +146,10 @@ body {
   }
 
 
-.hov{
+.hov2{
   transition: filter 0.3s ease;
 }
-.hov:hover{
+.hov2:hover{
   filter: brightness(0.5);
 }
 

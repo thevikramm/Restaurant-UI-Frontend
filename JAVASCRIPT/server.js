@@ -6,7 +6,10 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // 🧼 Clean CORS setup
-app.use(cors({ origin: 'http://127.0.0.1:5500' }));
+app.use(cors({
+  origin: ['http://127.0.0.1:5500', 'http://localhost:5500']
+}));
+
 
 // 👂 Body parser
 app.use(bodyParser.json());
@@ -54,11 +57,11 @@ app.post('/reserve', (req, res) => {
 
 // 📬 Contact route
 app.post('/contact', (req, res) => {
-  const { contactName, contactEmail, message } = req.body;
+  const { contactName, contactEmail, contactMessage } = req.body;
   console.log("📨 Contact form received:", req.body);
 
   const sql = 'INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)';
-  db.query(sql, [contactName, contactEmail, message], (err, result) => {
+  db.query(sql, [contactName, contactEmail, contactMessage], (err, result) => {
     if (err) {
       console.error('❌ DB Error:', err.message);
       return res.status(500).json({ message: 'Database error: ' + err.message });
